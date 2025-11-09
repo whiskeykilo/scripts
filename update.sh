@@ -47,30 +47,7 @@ pnpm update -g > /dev/null;
 echo "Updating Project Discovery tools..."
 pdtm -ua > /dev/null 2>&1;
 
-# # Update Mac App Store apps
-# # https://github.com/mas-cli/mas
-# echo "Upgrading macOS App Store apps..."
-# mas_upgrade=$(mas upgrade 2>&1 | grep Everything)
-
-# if [ "$mas_upgrade" != "Everything is up-to-date" ]; then
-# 	echo "Upgrading App Store apps..."
-# else
-# 	echo "No App Store updates available."
-# fi
-
-# # macOS
-# echo "Checking macOS updates..."
-# mac_update=$(softwareupdate -l 2>&1 | head -1)
-
-# if [ "$mac_update" != "No new software available." ]; then
-# 	echo "Updates found."
-# 	echo "Do you wish to install these updates? This will restart your Mac."
-# 	select yn in "Yes" "No"; do
-# 	    case $yn in
-# 		Yes ) echo "Downloading and installing macOS packages..."; softwareupdate -iaR | tail +5; break;;
-# 		No ) exit;;
-# 	    esac
-# 	done
-# else
-# 	echo "No macOS updates available."
-# fi
+# mackup
+# https://github.com/lra/mackup
+echo "Backing up via mackup..."
+mackup backup --force > /dev/null 2>&1;

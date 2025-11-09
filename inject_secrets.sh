@@ -67,7 +67,7 @@ PY
     echo "  resolving: $ref"
     # read secret from 1Password. op read returns the raw field content.
     # Suppress stderr for individual refs but capture failure
-    if ! val="$(op read --no-color --trim "$ref" 2>/dev/null)"; then
+    if ! val="$(op read --no-color --no-newline "$ref" 2>/dev/null)"; then
       echo "    warning: failed to read $ref; leaving placeholder." >&2
       continue
     fi
