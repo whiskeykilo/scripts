@@ -49,5 +49,5 @@ pdtm -ua > /dev/null 2>&1;
 
 # mackup
 # https://github.com/lra/mackup
-echo "Backing up via mackup..."
-mackup backup --force > /dev/null 2>&1;
+#echo "Backing up via mackup..."
+#mackup backup --force > /dev/null 2>&1;
